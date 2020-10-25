@@ -1,0 +1,31 @@
+plugins {
+    id 'idea'
+    id 'application'
+}
+
+application {
+    mainClassName = 'com.soyouwanna.tictactoe.Main'
+}
+
+run {
+    standardInput(System.in)
+}
+
+group 'com.soyouwanna.tictactoe'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+}
